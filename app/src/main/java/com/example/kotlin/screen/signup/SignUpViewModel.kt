@@ -47,6 +47,4 @@ class SignUpViewModel(private val userRepository: UserRepository): ViewModel() {
         disposables.add(disposable)
     }
 
-
-
 }

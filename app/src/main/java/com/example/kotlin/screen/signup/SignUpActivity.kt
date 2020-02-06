@@ -50,8 +50,6 @@ class SignUpActivity : AppCompatActivity(), SignUpNavigator, KodeinAware {
 
     companion object {
         fun getIntent(context: Context) = Intent(context, SignUpActivity::class.java)
-        val TAG: String = "HeroFragment"
-        const val TAG2: String = "HeroFragment"
     }
 
 }
