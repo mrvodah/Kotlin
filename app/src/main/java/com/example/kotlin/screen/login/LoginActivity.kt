@@ -63,7 +63,7 @@ class LoginActivity : AppCompatActivity(), LoginNavigator, KodeinAware {
 
     override fun onSuccess() {
         progressLogin.visibility = View.GONE
-//        startActivity(MainActivity.getInstance(this))
+        startActivity(MainActivity.getInstance(this))
         finish()
     }
 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.kotlin.screen.home.ItemLegoHomeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_160"
+        android:onClick="@{()->viewModel.onItemClick()}"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageLego"
+            android:layout_width="@dimen/image_lego_width"
+            android:layout_height="@dimen/image_lego_height"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:background="@drawable/bg_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            bind:imageUrl="@{viewModel.lego.image}" />
+
+        <TextView
+            android:id="@+id/textLegoName"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{viewModel.lego.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageLego" />
+
+        <TextView
+            android:id="@+id/textRate"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_16"
+            android:text="@{viewModel.lego.rate + `*`}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textLegoName" />
+
+        <TextView
+            android:id="@+id/textPrice"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@{viewModel.lego.price + `$`}"
+            android:textAlignment="textStart"
+            android:paddingStart="@dimen/dp_8"
+            android:paddingEnd="@dimen/dp_8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/imageLego"
+            app:layout_constraintStart_toEndOf="@id/textRate"
+            app:layout_constraintTop_toBottomOf="@id/textLegoName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
